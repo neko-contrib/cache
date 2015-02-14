@@ -1,4 +1,5 @@
 #Cache
+[![wercker status](https://app.wercker.com/status/3ddcdbd94dda6114613d69a4360f3f1c/s "wercker status")](https://app.wercker.com/project/bykey/3ddcdbd94dda6114613d69a4360f3f1c)
 [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/neko-contrib/cache)
 [![GoCover](http://gocover.io/_badge/github.com/neko-contrib/cache)](http://gocover.io/github.com/neko-contrib/cache)
 
