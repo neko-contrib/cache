@@ -15,21 +15,23 @@ import (
   nc "github.com/neko-contrib/cache"
 )
 
-app := neko.Classic()
-app.Use(nc.Generate(nc.Options{}))
+func main() {
+  app := neko.Classic()
+  app.Use(nc.Generate(nc.Options{}))
 
-m.GET("/", func(ctx *neko.Context) {
-  cache := ctx.MustGet(nc.MemoryStore).(nc.Cache)
-  cache.Set("foo", "bar", 10 * time.Second)
-})
+  m.GET("/", func(ctx *neko.Context) {
+    cache := ctx.MustGet(nc.MemoryStore).(nc.Cache)
+    cache.Set("foo", "bar", 10 * time.Second)
+  })
 
-m.GET("/get", func(ctx *neko.Context) {
-  cache := ctx.MustGet(nc.MemoryStore).(nc.Cache)
-  v, found := cache.Get("foo")
-  ctx.Text(v.(string))
-})
+  m.GET("/get", func(ctx *neko.Context) {
+    cache := ctx.MustGet(nc.MemoryStore).(nc.Cache)
+    v, found := cache.Get("foo")
+    ctx.Text(v.(string))
+  })
 
-app.Run(":3000")
+  app.Run(":3000")
+}
 ~~~
 
 ## Options
